@@ -1,3 +1,7 @@
+import os
+print("Current dir:", os.getcwd())
+print("Files:", os.listdir())
+
 from bq_query import get_bigquery_data
 from ui_components import chatbot_ui
 
