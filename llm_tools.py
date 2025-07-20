@@ -2,7 +2,7 @@ import openai
 import os
 import pandas as pd
 from dotenv import load_dotenv
-import psycopg2
+import psycopg2-binary
 from datetime import datetime
 from calculator_agent import calculate
 
@@ -18,7 +18,7 @@ SUPABASE_PORT = os.getenv("SUPABASE_PORT")
 
 def log_to_supabase(question, data_text, response):
     try:
-        conn = psycopg2.connect(
+        conn = psycopg2-binary.connect(
             dbname=SUPABASE_DB,
             user=SUPABASE_USER,
             password=SUPABASE_PASS,
